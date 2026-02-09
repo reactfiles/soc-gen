@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Scope</title>
+    <script>
+        /* 
+        var     will hoist to the object where you have defined it
+        let     will hoist to TDZ
+        const   will hoist to TDZ
+                can not be modified and can not be created without initial value
+        */
+        var hero = {
+            title : "Batman",
+            power : 6
+        };
+        function checkPower(){
+            if(hero.power > 5){
+                let tempTitle = hero.title;
+                hero.title = tempTitle+" is strong";
+                console.log(tempTitle);// ??? 
+            };
+        }; 
+        checkPower();
+        console.log(hero.title);// ??? 
+        for(let i = 0; i < 10; i++){
+            console.log(i);
+        };      
+        const compname = "soc gen";
+        console.log(compname);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

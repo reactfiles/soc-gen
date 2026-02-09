@@ -6,15 +6,18 @@
     <title>Document</title>
     <style>
         #app{
+            border: 1px solid transparent;
             background-color: rgb(179, 179, 179);
             padding: 10px;
+            width: 600px;
+            height: 600px;
             overflow: auto;
             margin: auto;
-            display: flex;
+/*             display: flex;
             align-items: center;
             flex-wrap: wrap;
             align-content: center;
-            justify-content: center;
+            justify-content: center; */
         }
         #app div{
             width: 100px;
@@ -27,6 +30,7 @@
             margin: 5px;
             flex-grow: 0;
             flex-shrink: 0;
+            float: left;
             outline: 1px solid rgb(255, 255, 255);
         }
         #app div:hover{
@@ -42,7 +46,7 @@
             if(event.target.id !== "app"){
                 app.removeChild(event.target)
             }else{
-                if(app.children.length > 1){
+                if(app.children.length > 0){
                     alert("you must click on a box to remove")
                 }else{
                     alert("no more boxes to remove")
@@ -54,7 +58,7 @@
            app.addEventListener("click",boxClickHandler); 
            var si = setInterval(function(target){
             console.log("set interval was called");
-            if(count <= 10){
+            if(count <= 100){
                 var r = Math.round(Math.random() * 255);
                 var g = Math.round(Math.random() * 255);
                 var b = Math.round(Math.random() * 255);

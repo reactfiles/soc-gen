@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+    <script>
+        var hero = {
+            title : "Batman",
+            power : 6,
+            firstname : "Bruce",
+            lastname : "Wayne",
+            city : "Gotham",
+            ticketprice : 25
+        };
+        /* 
+        console.log(hero);
+        var tempHero = hero;
+        console.log(tempHero);
+        tempHero.title = "Joker";
+        tempHero.ticketprice = "$"+hero.ticketprice;
+        //------------------------------// 
+        console.log(tempHero.title);// Joker
+        console.log(hero.title);// ???
+        console.log(hero.ticketprice);// ??? 
+        // 
+        */
+        /*         
+        var hero_title = hero.title;
+        var hero_power = hero.power;
+        var hero_firstname = hero.firstname;
+        var hero_lastname = hero.lastname;
+        var hero_city = hero.city;
+        var hero_ticketprice = hero.ticketprice;
+
+        console.log(hero_title);
+        hero_title = "Joker"
+        console.log(hero_title);
+        console.log(hero.title); 
+        */
+       var {
+        title : hero_title, 
+        power : hero_power, 
+        firstname : hero_firstname, 
+        lastname : hero_lastname, 
+        city : hero_city, 
+        ticketprice : hero_ticketprice
+        } = hero;
+        console.log(hero_title);
+        hero_title = "Joker"
+        console.log(hero_title);
+        console.log(hero.title); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
