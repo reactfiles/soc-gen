@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        /* virtual elements */
+        var p = document.createElement("p");
+            p.textContent = 'Welcome to your life';
+        /* ------------------------ */
+        var li1 = document.createElement("li");
+            li1.textContent = "List Item 1";
+        var li2 = document.createElement("li");
+            li2.textContent = "List Item 2";
+        var li3 = document.createElement("li");
+            li3.textContent = "List Item 3";
+        var ol = document.createElement("ol");
+            ol.appendChild(li1)
+            .appendChild(li2)
+            .appendChild(li3);
+        
+
+       /*  document.getElementById("app").innerHTML = `
+        <p>Welcome to your life</p>
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+        </ul>`; */
+        document.getElementById("app").appendChild(p).appendChild(ol);
+    </script>
+</body>
+</html>
