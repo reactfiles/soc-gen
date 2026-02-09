@@ -1,0 +1,21 @@
+Extensions :
+---------------
+Mithril Emmet - FallenMax
+open in browser - TechER
+Prettier - Code formatter - Prettier
+Auto Rename Tag - Jun Han
+Bracket Pair Color DLW - Bracket Pair Color DLW
+ESLint - Microsoft
+Live Server - Ritwick Dey
+Material Icon Theme - Philipp Kief
+One Monokai Theme - Joshua Azemoh
+Auto Close Tag - Jun Han
+
+
+Schedule :
+----------
+9 - 	Session Start
+11 - 	Short Break 15 mins
+1 - 	Lunch Break 60 mins
+3:30 - 	Short Break 15 mins
+5 - 	Session End
