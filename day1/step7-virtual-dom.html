@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            background-color: lightblue;
+            width: 1200px;
+            height: 600px;
+            overflow: auto;
+        }
+        #app div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: darkcyan;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+    <script>
+        function clickHandler(){
+            // alert("you clicked the button");
+            var app = document.getElementById("app");
+            var box = document.createElement("div");
+                box.textContent = "box";
+                app.appendChild(box);
+        }
+        function init(){
+            document
+            .getElementsByTagName("button")[0]
+            .addEventListener("click", clickHandler)
+        };
+        window.onload = init;
+    </script>
+</head>
+<body>
+    <button>Add A Box</button>
+    <hr>    
+    <div id="app"></div>
+</body>
+</html>

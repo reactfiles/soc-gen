@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app{
+            background-color: lightblue;
+            width: 1200px;
+            height: 600px;
+            overflow: auto;
+        }
+        #app div{
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: darkcyan;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 5px;
+            float: left;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var app = null;
+        function init(){
+            app = document.getElementById("app");
+           /*  for(var i = 0; i < 150; i++){
+                var app = document.getElementById("app");
+                var box = document.createElement("div");
+                box.textContent = "box";
+                app.appendChild(box);
+            } */
+           var si = setInterval(function(target){
+            console.log("set interval was called");
+            if(count <= 50){
+                var box = document.createElement("div");
+                box.textContent = "box";
+                target.appendChild(box);
+                count++;
+            }else{
+                clearInterval(si);
+            }
+           },50, app);
+        };
+        window.onload = init;
+    </script>
+</head>
+<body>
+    <button>Add A Box</button>
+    <hr>    
+    <div id="app"></div>
+</body>
+</html>
