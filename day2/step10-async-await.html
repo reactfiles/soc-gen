@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    async function promise1(){
+        return await new Promise((resolve, reject)=>{
+            setTimeout(()=>{
+                resolve("success data")
+            },4000)
+        })
+    };
+
+    promise1().then().catch().finally
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
