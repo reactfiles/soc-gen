@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promise</title>
     <style>
-        #app{
+        #app, #lessapp{
             background-color: rgb(179, 179, 179);
             padding: 10px;
             overflow: auto;
@@ -16,18 +16,12 @@
             align-content: center;
             justify-content: center;
         }
+
         #lessapp{
-            background-color: rgb(179, 179, 179);
-            padding: 10px;
-            overflow: auto;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            align-content: center;
-            justify-content: center;
+            background-color: rgb(130, 130, 130);
         }
-        #app div{
+       
+        #app div, #lessapp div{
             width: 150px;
             height: 50px;
             text-align: center;
@@ -40,26 +34,14 @@
             flex-shrink: 0;
             outline: 1px solid rgb(255, 255, 255);
         }
-        #lessapp div{
-            width: 150px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            color: aliceblue;
+        
+        #app div:hover, #lessapp div:hover{
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+        }
+        h1,h2{
             font-family: sans-serif;
-            font-size: 30px;
-            margin: 5px;
-            flex-grow: 0;
-            flex-shrink: 0;
-            outline: 1px solid rgb(255, 255, 255);
-        }
-        #app div:hover{
-            box-shadow: 0px 0px 10px black;
-            cursor: pointer;
-        }
-        #lessapp div:hover{
-            box-shadow: 0px 0px 10px black;
-            cursor: pointer;
+
         }
     </style>
     <script>
@@ -107,10 +89,22 @@
     </script>
 </head>
 <body>
-     <h1>Number of Sales : <span id="log"></span></h1>
-     <div id="app"></div>
-     <h1>Total Sale : <span id="total">???</span></h1>
-     <hr>
-     <div id="lessapp"></div>
+     <fieldset>
+        <legend>
+            <h2>All Boxes</h2>
+        </legend>
+         <h1>Number of Sales : <span id="log"></span></h1>
+        <div id="app"></div>
+        <h1 style="background-color: yellowgreen; color: beige; border-radius: 10px; padding: 20px; width: 300px;">Total Sale : <span id="total">...</span></h1>
+     </fieldset>
+     <br>
+     <br>
+     <br>
+     <fieldset>
+        <legend>
+            <h2>Boxes less than 50</h2>
+        </legend>
+        <div id="lessapp"></div>
+     </fieldset>
 </body>
 </html>
