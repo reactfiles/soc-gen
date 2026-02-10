@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <script>
+       /*  
+       console.log("was called  @ line 8");
+
+        setTimeout(function(){
+            console.log("was called after 2 sec","@ line 10");
+        },2000);
+
+        console.log("was called @ line 12"); 
+        */
+       // 
+       /* 
+       let resolve = Promise.resolve(100);
+       resolve.then(res => console.log(res));
+       
+       let reject = Promise.reject(new Error("promise failed"));
+       reject.catch(err => console.log(err));
+       */
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(true){
+                    resolve("data from server arrived")
+                }else{
+                    reject(new Error("server rejected to respond"))
+                }
+        },4000)
+      });
+
+      promise
+      .then(res => console.log(res))
+      .catch(error => console.log(error))
+      .finally(console.log("promise is now completed"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
