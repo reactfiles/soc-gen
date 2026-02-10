@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        /* 
+            public property 
+            public method
+            
+            private property
+                    getter
+                    setter
+            private method
+
+            static property 
+            static method
+
+        */
+        class Hero{
+            static version = 1001;
+            // public property
+            title = "Ironman";
+            // private property
+            #power = 5;
+            // public method
+            sayname(){
+                return this.title
+            }
+
+            get saypower(){
+                return this.#power;
+            }
+            set saypower(npower){
+                this.#power = npower;
+            }
+
+        };
+        let hero = new Hero();
+        console.log(hero.title);
+        console.log(hero.sayname());
+        console.log(hero.saypower);
+        hero.saypower = 8;
+        console.log(hero.saypower);
+        console.log(Hero.version);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
