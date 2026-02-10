@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+    <script>
+        let favNums = [3,95,77,7,75,20,55,18,12,19,28,7,45,11];
+       /*  
+        for(let i = 0; i < favNums.length; i++){
+            console.log(favNums[i])
+        }; 
+        */
+        // favNums.forEach( val => console.log(val) );
+        /* 
+        forEach()
+        map
+        filter()
+        every() 
+        some()
+        reduce()
+        reduceRight()
+        indexOf(searchTerm, fromIndex) 
+        lastIndexOf()
+        */
+       /* 
+       var doubleFavNums = [];
+       favNums.forEach(val => doubleFavNums.push(val * 2));
+       console.log(favNums);
+       console.log(doubleFavNums);
+       */
+       /*
+       var doubleFavNums = favNums.map(val => val * 2);
+       console.log(favNums);
+       console.log(doubleFavNums); 
+       */
+       /*        
+       var lessThan50 = favNums.filter(val => val < 50 );
+       var gtThan50 = favNums.filter(val => val > 50 );
+
+       console.log(lessThan50);
+       console.log(gtThan50); 
+       */
+     /*  
+      var allValsLessThan100 = favNums.every(val => {
+        console.log(val);
+        return val < 10;
+      });
+      console.log(allValsLessThan100); 
+      */
+     /*
+     var allValsLessThan100 = favNums.some(val => {
+        console.log(val);
+        return val < 10;
+    });
+    console.log(allValsLessThan100);
+    */
+   /*   
+   var total = favNums.reduce((prevVal,currentValue)=>{return prevVal+currentValue});
+    console.log(total); 
+    */
+/*     var total = favNums.reduceRight((prevVal,currentValue)=>{return prevVal+currentValue});
+    console.log(total); */
+    console.log(favNums.indexOf(7));
+    console.log(favNums.lastIndexOf(7));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
