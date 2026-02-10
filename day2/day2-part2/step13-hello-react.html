@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app .box{
+            background-color: silver;
+            border: 1px solid darkgrey;
+            font-family: sans-serif;
+            text-align: justify;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function init(){
+            // virtual element
+            let para = document.createElement("p");
+                para.innerText = ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque repudiandae, quo consequatur sunt nisi corporis cum doloremque fuga, rem nam temporibus, illum non dicta. Ipsa quaerat eius impedit porro  incidunt, enim molestiae tempora? Eos sint repudiandae maiores officia dolorem minima pariatur architecto molestias, eveniet labore harum vitae deserunt assumenda voluptas corporis deleniti laudantium fugit at praesentium consequuntur explicabo eligendi est! Magnam, ipsum vel eos facilis, id sequi dolorum eum eius porro delectus ex repudiandae adipisci dolor dignissimos debitis, quis deserunt earum voluptas quas aut deleniti veniam? Ex, expedita. Ullam necessitatibus officiis, enim maxime exercitationem aut. Ducimus eius quidem temporibus?`;
+                para.setAttribute("class","box");
+            document.getElementById("app").appendChild(para);
+        };
+        window.onload = init;
+    </script>
+</head>
+<body>
+    <div id="app"></div>
+</body>
+</html>
