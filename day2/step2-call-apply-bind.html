@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Apply Bind</title>
+    <script>
+        var ironman = {
+            firstname : "Tony",
+            lastname : "Stark",
+            power : 8,
+            fullname : function(power, city){
+                return this.firstname+" "+this.lastname+" is strong with "+power+" : power & is from "+city;
+            }
+        };
+        var hulk = {
+            firstname : "Bruce",
+            lastname : "Benner",
+            power : 7
+        };
+        
+        /*         
+        console.log(ironman.fullname());// ???
+        console.log(ironman.fullname.call(spiderman));// ???
+        console.log(ironman.fullname.call(captainamerica));// ??? 
+        */
+       /* 
+       console.log(ironman.fullname());// ???
+       console.log(ironman.fullname.apply(spiderman));// ???
+       console.log(ironman.fullname.apply(captainamerica));// ???
+       */
+      /* 
+      console.log(ironman.fullname());// ???
+      console.log(ironman.fullname.bind(spiderman)());// ???
+      console.log(ironman.fullname.bind(captainamerica)());// ???
+      */
+     console.log(ironman.fullname(ironman.power,"New York"));
+     console.log(ironman.fullname.call(hulk, hulk.power,"Dayton Ohio"));
+     console.log(ironman.fullname.apply(hulk, [hulk.power,"Dayton Ohio"]));
+     console.log(ironman.fullname.bind(hulk)(hulk.power,"Dayton Ohio"));
+
+     var thor = {
+         firstname : "Thor",
+         lastname : "Odinson",
+         power : 9
+        };
+        
+    var upcominghero = ironman.fullname.bind(thor);
+        /* 
+        
+        */
+    console.log(upcominghero(thor.power,"asgard"));
+    console.log(upcominghero(thor.power,"earth"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
