@@ -13,15 +13,43 @@
             padding: 20px;
         }
     </style>
-    <script>
-        function init(){
+   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- <script>
+        /* function init(){
             // virtual element
             let para = document.createElement("p");
                 para.innerText = ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque repudiandae, quo consequatur sunt nisi corporis cum doloremque fuga, rem nam temporibus, illum non dicta. Ipsa quaerat eius impedit porro  incidunt, enim molestiae tempora? Eos sint repudiandae maiores officia dolorem minima pariatur architecto molestias, eveniet labore harum vitae deserunt assumenda voluptas corporis deleniti laudantium fugit at praesentium consequuntur explicabo eligendi est! Magnam, ipsum vel eos facilis, id sequi dolorum eum eius porro delectus ex repudiandae adipisci dolor dignissimos debitis, quis deserunt earum voluptas quas aut deleniti veniam? Ex, expedita. Ullam necessitatibus officiis, enim maxime exercitationem aut. Ducimus eius quidem temporibus?`;
                 para.setAttribute("class","box");
             document.getElementById("app").appendChild(para);
         };
-        window.onload = init;
+        window.onload = init; */
+        let content = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque repudiandae, quo consequatur sunt nisi corporis cum doloremque fuga, rem nam temporibus, illum non dicta. Ipsa quaerat eius impedit porro  incidunt, enim molestiae tempora? Eos sint repudiandae maiores officia dolorem minima pariatur architecto molestias, eveniet labore harum vitae deserunt assumenda voluptas corporis deleniti laudantium fugit at praesentium consequuntur explicabo eligendi est! Magnam, ipsum vel eos facilis, id sequi dolorum eum eius porro delectus ex repudiandae adipisci dolor dignissimos debitis, quis deserunt earum voluptas quas aut deleniti veniam? Ex, expedita. Ullam necessitatibus officiis, enim maxime exercitationem aut. Ducimus eius quidem temporibus?`
+        
+        function init(){
+            let para = React.createElement("p",{ className : "box" }, content );
+            ReactDOM.createRoot(document.getElementById("app")).render(para);
+        };
+        window.onload = init; 
+    </script> -->
+
+    <script type="text/babel">
+        let content = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt itaque repudiandae, quo consequatur sunt nisi corporis cum doloremque fuga, rem nam temporibus, illum non dicta. Ipsa quaerat eius impedit porro  incidunt, enim molestiae tempora? Eos sint repudiandae maiores officia dolorem minima pariatur architecto molestias, eveniet labore harum vitae deserunt assumenda voluptas corporis deleniti laudantium fugit at praesentium consequuntur explicabo eligendi est! Magnam, ipsum vel eos facilis, id sequi dolorum eum eius porro delectus ex repudiandae adipisci dolor dignissimos debitis, quis deserunt earum voluptas quas aut deleniti veniam? Ex, expedita. Ullam necessitatibus officiis, enim maxime exercitationem aut. Ducimus eius quidem temporibus?`
+        // let para = React.createElement("p",{ className : "box" }, content );
+        let List = function(props){
+            return <ul>
+                        <li> { props.title } List Item 1</li>
+                        <li> { props.title } List Item 2</li>
+                        <li> { props.title } List Item 3</li>
+                    </ul>
+        }
+        ReactDOM.createRoot(document.getElementById("app")).render(<div>
+            <List title="Bengaluru"/>
+            <List title="Pune"/>
+            <List title="Chennai"/>
+            </div>);
+
     </script>
 </head>
 <body>
