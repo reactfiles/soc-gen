@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Example</title>
+    <script>
+        /* 
+        var cart = {
+            name : "My Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(scope){
+                    return scope.getCostPrice() * .2;
+                };
+                return this.getCostPrice()+calculateProfit(this);
+            }
+        }; 
+        */
+        /* var cart = {
+            name : "My Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var scope = this;
+                var calculateProfit = function(){
+                    return scope.getCostPrice() * .2;
+                };
+                return this.getCostPrice()+calculateProfit();
+                // return this.name
+            }
+        }; */
+        /* var getCostPrice = function(){
+            return 10000;
+        }
+        var cart = {
+            name : "My Cart",
+            getCostPrice : () => {
+                return 100;
+            },
+            getSellingPrice : () => {
+                var calculateProfit = () => {
+                    return this.getCostPrice() * .2;
+                };
+                return this.getCostPrice()+calculateProfit();
+            }
+        };
+        console.log(cart.getCostPrice());// 100
+        console.log(cart.getSellingPrice());// 120 */
+        var cart = {
+            name : "My Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    var calculateDiscountedPrice = function(){
+                        return this.getCostPrice() * .05;
+                    };
+                    return {
+                        calculateDiscountedPrice,
+                        profitPrice : 20
+                    };
+                };
+                // return this.getCostPrice()+calculateProfit().calculateDiscountedPrice.call(this);
+                return this.getCostPrice()+calculateProfit().profitPrice;
+            }
+        }; 
+        console.log(cart.getCostPrice());// 100
+        console.log(cart.getSellingPrice());// 120
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<!-- 
+
+getSellingPrice : function(){
+    var calculateProfit = () => {
+        return this.getCostPrice() * 0.2;
+    };
+    return this.getCostPrice() + calculateProfit();
+}
+
+-->
+
+<!-- 
+var cart = {
+            name : "My Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var costPrice = this.getCostPrice();
+                var calculateProfit = function(){
+                    return costPrice * .2;
+                };
+                return this.getCostPrice()+calculateProfit();
+            }
+        };
+
+
+-->
