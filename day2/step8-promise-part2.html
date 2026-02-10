@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    <style>
+        #app{
+            background-color: rgb(179, 179, 179);
+            padding: 10px;
+            overflow: auto;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        #lessapp{
+            background-color: rgb(179, 179, 179);
+            padding: 10px;
+            overflow: auto;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+        #app div{
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 5px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            outline: 1px solid rgb(255, 255, 255);
+        }
+        #lessapp div{
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 5px;
+            flex-grow: 0;
+            flex-shrink: 0;
+            outline: 1px solid rgb(255, 255, 255);
+        }
+        #app div:hover{
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+        }
+        #lessapp div:hover{
+            box-shadow: 0px 0px 10px black;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+    let drawBox = function(targetBox, data){
+        var r = Math.round(Math.random() * 255);
+        var g = Math.round(Math.random() * 255);
+        var b = Math.round(Math.random() * 255);
+        var a = Math.random();
+        var box = document.createElement("div");
+            box.setAttribute("style","background-color:"+"rgba("+r+","+g+","+b+","+a+")")
+            box.textContent = data;
+        targetBox.appendChild(box);
+    }
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(true){
+                    resolve({ data : [3,95,77,7,75,20,55,18,12,19,28,7,45,11] })
+                }else{
+                    reject(new Error("server rejected to respond"))
+                }
+        },4000)
+      });
+
+/*     promise.then(res => console.log(res),error => console.log(error)); */
+
+      promise
+      .then(res => {
+       let app = document.getElementById("app");
+       res.data.forEach(val =>  drawBox(app,val) );
+       return res;
+      })
+      .then(res => {
+        document.getElementById("log").textContent = res.data.length;
+        return res
+      })
+      .then(res => {
+        document.getElementById("total").textContent = res.data.reduce((initVal,val)=> initVal + val ,0);
+        return res
+      })
+      .then(res => {
+         res.data
+         .filter((val) =>val < 50)
+         .forEach(filval =>  drawBox(lessapp,filval) )
+      } )
+    </script>
+</head>
+<body>
+     <h1>Number of Sales : <span id="log"></span></h1>
+     <div id="app"></div>
+     <h1>Total Sale : <span id="total">???</span></h1>
+     <hr>
+     <div id="lessapp"></div>
+</body>
+</html>
