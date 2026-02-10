@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+    
+    <script>
+      let promise1 = function(){
+        return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(false){
+                    resolve("response from first promise")
+                }else{
+                    reject(new Error("first server rejected to respond"))
+                }
+        },1000)
+      })
+      }
+      let promise2 = function(){
+        return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(true){
+                    resolve("response from second promise")
+                }else{
+                    reject(new Error("second server rejected to respond"))
+                }
+        },2000)
+      })
+      }
+      let promise3 = function(){
+        return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(true){
+                    resolve("response from third promise")
+                }else{
+                    reject(new Error("third server rejected to respond"))
+                }
+        },3000)
+      })
+      }
+      let promise4 = function(){
+        return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+                if(true){
+                    resolve("response from fourth promise")
+                }else{
+                    reject(new Error("fourth server rejected to respond"))
+                }
+        },4000)
+      })
+      }
+/* 
+all promise to resolve
+any promise to resolve
+race result of first to resolve or reject
+*/
+/* 
+all()
+allSettled() 
+any() 
+race()
+withResolvers() # 
+*/
+/* 
+Promise.all([promise1(), promise2(), promise3(), promise4()])
+.then(resarray => {
+    resarray.forEach(val => console.log(val))
+}) 
+*/
+/* 
+Promise.any([promise1(), promise2(), promise3(), promise4()])
+.then(res => console.log(res)); 
+*/
+/* 
+Promise.allSettled([promise1(), promise2(), promise3(), promise4()])
+.then(resarray => {
+    resarray.forEach(val => console.log(val))
+}) 
+*/
+Promise.race([promise1(), promise2(), promise3(), promise4()])
+.then(res => console.log(res))
+.catch(err => console.log(err));
+    </script>
+</head>
+<body>
+     
+</body>
+</html>
