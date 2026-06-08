@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scope</title>
     <script>
-        console.log("begining of script ", i);//??
+       // console.log("begining of script ", i);//??
+
+        var user1 = "first var";
+        let user1 = "second let";
+        const user1 = "third const";
+
         var hero = {
             title : "Ironman",
             power : 6
         };
-        
-        function checkPowerChangeTitle(){
-            console.log(tempTitle);/// ?? 
-            if(hero.power > 5){
-                var tempTitle = hero.title;
-                hero.title = tempTitle+" is strong";
-            }
-            console.log(tempTitle);/// ?? 
-        };
 
+        function checkPowerChangeTitle(){
+            if(hero.power > 5){
+                const tempTitle = hero.title;
+                hero.title = tempTitle+" is strong";
+                console.log(tempTitle);/// ?? 
+            }
+        };
+        
         checkPowerChangeTitle();
+
         console.log(hero.title); // ??
 
-        for(var i = 0; i < 100; i++){
+     /*    for(let i = 0; i < 100; i++){
             console.log(i);
-        };
+        }; */
+        const user = "vijay";
 
-        console.log("outside the loop ", i);//??
+        console.log(user);
     </script>
 </head>
 <body>
