@@ -8,14 +8,16 @@
        // console.log("begining of script ", i);//??
 
         var user1 = "first var";
-        let user1 = "second let";
-        const user1 = "third const";
+        // let user1 = "second let";
+        // const user1 = "third const";
 
+        console.log(hero); // undefined if we use var
+        console.log(hero); // ReferenceError if we use let
         var hero = {
             title : "Ironman",
             power : 6
         };
-
+        
         function checkPowerChangeTitle(){
             if(hero.power > 5){
                 const tempTitle = hero.title;
