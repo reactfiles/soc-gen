@@ -51,3 +51,68 @@
     <div id="container"></div>
 </body>
 </html>
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove Event Listeners</title>
+    <style>
+        #container{
+            width: 1016px;
+            height: 400px;
+            background-color: silver;
+            margin: 10px auto;
+            overflow: auto;
+        }
+        #container div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(233, 27, 27);
+            margin: 5px;
+            font-family: sans-serif;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            display: inline-block;
+        }
+        button{
+            margin: 0px auto;
+            display: block;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var count = 1;
+        function addClickHandler(){
+           // alert("lets create a box");
+           var elm = document.createElement("div");
+           elm.textContent = count;
+           document.getElementById("container").appendChild(elm);
+           count++;
+        }
+        function stopButtonClickHandler(){
+            document.getElementsByTagName("button")[0].removeEventListener("click", addClickHandler);
+            document.getElementsByTagName("button")[0].setAttribute("disabled", "disabled")
+        }
+        function init(){
+            document.getElementsByTagName("button")[0].addEventListener("click", addClickHandler)
+            document.getElementsByTagName("button")[1].addEventListener("click", stopButtonClickHandler)
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <button>Add Box</button>
+    <button>Stop Adding Box</button>
+    <div id="container"></div>
+</body>
+</html>
