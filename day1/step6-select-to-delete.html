@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove Event Listeners</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #container{
+            width: 1016px;
+            height: 800px;
+            background-color: silver;
+            margin: 30px auto;
+            overflow: auto;
+        }
+        #container div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(233, 27, 27);
+            margin: 5px;
+            font-family: sans-serif;
+            text-align: center;
+            color: whitesmoke;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            display: inline-block;
+        }
+        button{
+            margin: 0px auto;
+            display: block;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        var count = 1;
+        var si = null;
+        function addBoxHandler(){
+           var elm = document.createElement("div");
+           elm.textContent = count;
+           document.getElementById("container").appendChild(elm);
+           count++;
+           if(count >= 51){
+            clearInterval(si);
+           };
+        };
+       
+        function init(){
+            si = setInterval(function(){
+                addBoxHandler();
+            },10);
+        };
+        document.addEventListener("DOMContentLoaded", init);
+    </script>
+</head>
+<body>
+    <h1>Select the box to remove</h1>
+    <div id="container"></div>
+</body>
+</html>
