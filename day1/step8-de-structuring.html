@@ -58,9 +58,21 @@
         // var temphero = {...hero}; // shallow copy
         var temphero = JSON.parse(JSON.stringify(hero)); // deep copy
         console.log(temphero.title, temphero.city, temphero.power);
+
+        var avengers = ["ironman", "hulk", "thor"];
+
+        /*         
+        var templist = avengers;
+        console.log(avengers[1]);
+        console.log(templist[1]);
+        templist[1] = "Changed";
+        console.log(templist[1]);
+        console.log(avengers[1]); 
+        */
+        var [firsthero, secondhero, thirdhero] = avengers;
+        console.log(thirdhero)
     </script>
 </head>
 <body>
-    
 </body>
 </html>
