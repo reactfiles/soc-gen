@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyonload(){
+            document.getElementById("log").innerHTML += "<p> added by body on-load event";
+        };
+        function windowaddEventListener(){
+            document.getElementById("log").innerHTML += "<p> added by window AddEventListener event";
+        };
+        function documentAddEventListener(){
+            document.getElementById("log").innerHTML += "<p> added by document DOM ContentLoaded event";
+        };
+        window.addEventListener("load", windowaddEventListener);
+        document.addEventListener("DOMContentLoaded", documentAddEventListener);
+    </script>
+</head>
+<body onload="bodyonload()">
+    <div id="log"></div>
+</body>
+</html>
