@@ -35,7 +35,7 @@
         herolastname = hero.lastname, 
         herocity = hero.city; */
 
-        var { 
+/*         var { 
             title :  herotitle, 
             power : heropower, 
             firstname : herofirstname, 
@@ -46,7 +46,18 @@
         console.log(heropower);
         herotitle = "Ironmonger"
         console.log(herotitle);
-        console.log(hero.title);
+        console.log(hero.title); */
+
+/*         var {   title :  title, 
+                power : power, 
+                firstname : firstname, 
+                lastname : lastname, 
+                city : city  } = hero; */
+
+        // var {  title, power, firstname, lastname, city  } = hero;
+        // var temphero = {...hero}; // shallow copy
+        var temphero = JSON.parse(JSON.stringify(hero)); // deep copy
+        console.log(temphero.title, temphero.city, temphero.power);
     </script>
 </head>
 <body>
