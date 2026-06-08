@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment</title>
     <script>
-        var cart = {
+        /* var cart = {
             name : "Cart",
             getCostPrice : function(){
                 return 100;
@@ -19,7 +19,95 @@
         };
 
         console.log(cart.getCostPrice());
+        console.log(cart.getSellingPrice());// ???  */
+
+        /* var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(scope){
+                    return scope.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit(this);
+            }
+        }; */
+
+        /* var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var scope = this;
+                var calculateProfit = function(){
+                    return scope.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit();
+            }
+        }; */
+
+        /* var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit.call(this);
+            }
+        }; */
+       /*  var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit.apply(this);
+            }
+        }; */
+        /* var cart = {
+            name : "Cart",
+            getCostPrice : function(){
+                return 100;
+            },
+            getSellingPrice : function(){
+                var calculateProfit = function(){
+                    return this.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit.bind(this)();
+            }
+        }; */
+        var getCostPrice = () => {
+            return 12000
+        }
+        var cart = {
+            name : "Cart",
+            getCostPrice : () => {
+                return 100;
+            },
+            getSellingPrice : () => {
+                var calculateProfit = () => {
+                    return this.getCostPrice() * 0.2;
+                }
+                return this.getCostPrice()+calculateProfit();
+            }
+        };
+        // console.log(cart.getCostPrice());
         console.log(cart.getSellingPrice());// ??? 
+
+       
+/*         let adder = (num1, num2) => {
+            return num1 + num2;
+        };
+
+        console.log(adder(5,6)); */
     </script>
 </head>
 <body>
