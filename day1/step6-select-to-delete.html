@@ -10,7 +10,7 @@
             font-family: sans-serif;
         }
         #container{
-            width: 1216px;
+            width: 1226px;
             height: 600px;
             background-color: silver;
             margin: 30px auto;
@@ -43,17 +43,24 @@
     <script>
         var count = 1;
         var si = null;
+        function removeBoxHandler(event){
+            if(event.target.id !== "container"){
+                document.getElementById("container").removeChild(event.target);
+            }
+        }
         function addBoxHandler(){
            var elm = document.createElement("div");
            elm.textContent = count;
+           // elm.addEventListener("click", removeBoxHandler);
            document.getElementById("container").appendChild(elm);
            count++;
-           if(count >= 51){
+           if(count >= 101){
             clearInterval(si);
            };
         };
        
         function init(){
+            document.getElementById("container").addEventListener("click", removeBoxHandler )
             si = setInterval(function(){
                 addBoxHandler();
             },10);
