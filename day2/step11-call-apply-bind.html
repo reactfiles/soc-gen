@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ironman = {
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(){
+                return this.firstname+" "+this.lastname;
+            }
+        };
+        var hulk = {
+            firstname : "Bruce",
+            lastname : "Benner"
+        };
+        var captainamerica = {
+            firstname : "Steve",
+            lastname : "Roggers"
+        };
+        console.log(ironman.fullname());
+        console.log(ironman.fullname.call(hulk));
+        console.log(ironman.fullname.call(captainamerica));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
