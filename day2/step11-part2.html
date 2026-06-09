@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ironman = {
+            firstname : "Tony",
+            lastname : "Stark",
+            fullname : function(city,power){
+                return this.firstname+" "+this.lastname+" is from "+city+" with power "+power;
+            }
+        };
+        var hulk = {
+            firstname : "Bruce",
+            lastname : "Benner",
+        };
+        var captainamerica = {
+            firstname : "Steve",
+            lastname : "Roggers"
+        };
+       /*  console.log(ironman.fullname("New York",5));
+        // first parameter to call is context,
+        console.log(ironman.fullname.call(hulk, "ohio", 8));
+        console.log(ironman.fullname.call(captainamerica,"New York", 6));  */
+        /*  
+       console.log(ironman.fullname());
+       console.log(ironman.fullname.call(hulk));
+       console.log(ironman.fullname.call(captainamerica)); 
+        */
+       /* 
+        console.log(ironman.fullname());
+        console.log(ironman.fullname.apply(hulk));
+        console.log(ironman.fullname.apply(captainamerica)); 
+        */
+        /* 
+        console.log(ironman.fullname("New York",5));
+        // first parameter to call is context,
+        console.log(ironman.fullname.apply(hulk, ["ohio", 8]));
+        console.log(ironman.fullname.apply(captainamerica,["New York", 6]));  
+        */
+        /* 
+        console.log(ironman.fullname());
+        console.log(ironman.fullname.bind(hulk)());
+        console.log(ironman.fullname.bind(captainamerica)()); 
+        */
+       console.log(ironman.fullname("New York",5));
+        console.log(ironman.fullname.bind(hulk)("ohio", 8) );
+        console.log(ironman.fullname.bind(captainamerica)("New York", 6)); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
