@@ -1,6 +1,6 @@
-import { Person } from "./person.js";
+import Vijay from "./person.js";
 
-class Hero extends Person {
+class Hero extends Vijay {
   title;
   firstname;
   lastname;

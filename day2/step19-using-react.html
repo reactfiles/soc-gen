@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <style>
+        .box{
+            background-color: crimson;
+            color: papayawhip;
+            font-family: sans-serif;
+            width: 100px;
+            list-style: none;
+            padding : 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        let item1 = React.createElement("li",{  class : "box" }, "List Item 1");
+        let item2 = React.createElement("li",{  class : "box" }, "List Item 2");
+        let item3 = React.createElement("li",{  class : "box" }, "List Item 3");
+        let list = React.createElement("ol", null, [item1, item2, item3]);
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            ReactDOM
+            .createRoot(document.getElementById('root'))
+            .render(list);
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

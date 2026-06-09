@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: crimson;
+            color: papayawhip;
+            font-family: sans-serif;
+            width: 100px;
+            list-style: none;
+            padding : 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        let list = document.createElement("ol");
+
+        let item1 = document.createElement("li");
+            item1.textContent = "List Item 1";
+            item1.setAttribute("class","box");
+        let item2 = document.createElement("li");
+            item2.textContent = "List Item 2";
+            item2.setAttribute("class","box");
+        let item3 = document.createElement("li");
+            item3.textContent = "List Item 3";
+            item3.setAttribute("class","box");
+        
+        list.appendChild(item1);
+        list.appendChild(item2);
+        list.appendChild(item3);
+
+        document.addEventListener("DOMContentLoaded", ()=>{
+            document.getElementById("app1").appendChild(list);
+        });
+    </script>
+</head>
+<body>
+    <div id="app1"></div>
+</body>
+</html>

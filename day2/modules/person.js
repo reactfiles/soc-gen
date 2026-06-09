@@ -5,4 +5,10 @@ class Person {
   }
 }
 // named export
-export { Person };
+// export { Person };
+
+// alias export
+// export { Person as Human };
+
+// default export
+export default Person;
