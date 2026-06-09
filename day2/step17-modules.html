@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script type="module">
+      import { Hero } from "./modules/hero.js";
+
+       let hero = new Hero("Bruce","Wayne","Batman", "I can fly");
+       console.log(hero.title, hero.firstname, hero.lastname);
+       console.log(hero.fullname());
+       console.log(hero.saymission());
+       console.log(hero.accessMission);
+       hero.accessMission = "Save Gotham";
+       console.log(hero.accessMission);
+       console.log(hero.version);
+       console.log(Hero.version);
+       console.log("############################");
+       console.log(hero.ability);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
