@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+            var avengers = [
+                            {   title : "Ironman",
+                                firstname: "Tony",
+                                lastname: "Stark",
+                            },
+                            {   title : "Hulk",
+                                firstname: "Bruce",
+                                lastname: "Benner"
+                            },
+                            {   title : "Captain America",
+                                firstname: "Steve",
+                                lastname: "Roggers"
+                            }
+                            ]
+        document.addEventListener("DOMContentLoaded", function(){
+            // document.getElementById("container").innerHTML+=" <div class='box'> <h1>"+avengers[0].title+"</h1> <h2>"+avengers[0].firstname+" "+avengers[0].lastname+"</h2> </div> "
+           avengers.forEach(val => {
+             document.getElementById("container").innerHTML+= `
+            <div class="box">
+                <h1>${val.title}</h1>
+                <h2>${val.firstname+" "+ val.lastname}</h2>
+            </div>
+            <hr/>
+            `
+           })
+        })
+    </script>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
